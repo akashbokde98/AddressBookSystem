@@ -11,16 +11,20 @@ namespace AddressBookSystem2
 
             AddressBook contact = new AddressBook();
 
-            Console.WriteLine("Enter 'ADD' To Add Contact-\nEnter 'EXIT' To Exit Address Book-");
-            string input = Console.ReadLine().ToUpper();
-            switch(input)
+            string input = "";
+            while (input != "EXIT")
             {
-                case "ADD":
-                    contact.AddPerson();
-                    break;
+                Console.WriteLine("Enter 'ADD' To Add New Contact-\nEnter 'EXIT' To Exit Address Book-");
+                input = Console.ReadLine().ToUpper();
+                switch (input)
+                {
+                    case "ADD":
+                        contact.AddPerson();
+                        break;
 
-                case "EXIT":
-                    break;
+                    case "EXIT":
+                        break;
+                }
             }
             
         }
