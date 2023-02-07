@@ -14,12 +14,16 @@ namespace AddressBookSystem2
             string input = "";
             while (input != "EXIT")
             {
-                Console.WriteLine("Enter 'ADD' To Add New Contact-\nEnter 'EXIT' To Exit Address Book-");
+                Console.WriteLine("Enter 'ADD' To Add New Contact-\nEnter 'EDIT' To Edit Contact-\nEnter 'EXIT' To Exit Address Book-");
                 input = Console.ReadLine().ToUpper();
                 switch (input)
                 {
                     case "ADD":
                         contact.AddPerson();
+                        break;
+
+                    case "EDIT":
+                        contact.EditPerson();
                         break;
 
                     case "EXIT":
