@@ -57,6 +57,7 @@ namespace AddressBookSystem2
                         Console.WriteLine("Enter New First Name-");
                         p.FirstName = Console.ReadLine().ToUpper();
                         ContactList.Add(person);
+                        Console.WriteLine("Edited Successfully!");
                         break;
                     }
                     else if (input.Equals('A') && fname.Equals(p.Address))
@@ -64,6 +65,7 @@ namespace AddressBookSystem2
                         Console.WriteLine("Enter New Address-");
                         p.Address = Console.ReadLine().ToUpper();
                         ContactList.Add(person);
+                        Console.WriteLine("Edited Successfully!");
                         break;
                     }
                     else if (input.Equals('C') && fname.Equals(p.City))
@@ -71,6 +73,7 @@ namespace AddressBookSystem2
                         Console.WriteLine("Enter New City-");
                         p.City = Console.ReadLine().ToUpper();
                         ContactList.Add(person);
+                        Console.WriteLine("Edited Successfully!");
                         break;
                     }
                     else if (input.Equals('S') && fname.Equals(p.State))
@@ -78,6 +81,7 @@ namespace AddressBookSystem2
                         Console.WriteLine("Enter New State-");
                         p.State = Console.ReadLine().ToUpper();
                         ContactList.Add(person);
+                        Console.WriteLine("Edited Successfully!");
                         break;
                     }
                     else if (input.Equals('E') && fname.Equals(p.Email))
@@ -85,6 +89,7 @@ namespace AddressBookSystem2
                         Console.WriteLine("Enter New Email-");
                         p.Email = Console.ReadLine().ToUpper();
                         ContactList.Add(person);
+                        Console.WriteLine("Edited Successfully!");
                         break;
                     }
                     else if (input.Equals('P') && fname.Equals(p.PhoneNumber))
@@ -92,6 +97,7 @@ namespace AddressBookSystem2
                         Console.WriteLine("Enter New Phone Number-");
                         p.PhoneNumber = Console.ReadLine().ToUpper();
                         ContactList.Add(person);
+                        Console.WriteLine("Edited Successfully!");
                         break;
                     }
                     else if (input.Equals('Z') && fname.Equals(p.ZipCode))
@@ -99,24 +105,29 @@ namespace AddressBookSystem2
                         Console.WriteLine("Enter New Zip Code-");
                         p.ZipCode = Console.ReadLine().ToUpper();
                         ContactList.Add(person);
+                        Console.WriteLine("Edited Successfully!");
                         break;
                     }
 
                 }
-                else
+            }
+            Console.WriteLine("Person Not Found!");
+        }
+        public void DeletePerson()
+        {
+            Console.WriteLine("Enter First Name- ");
+            string input = Console.ReadLine().ToUpper();
+
+            foreach(Person p in ContactList)
+            {
+                if (input.Equals(p.FirstName))
                 {
-                    Console.WriteLine("Person Not Found!");
+                    ContactList.Remove(p);
+                    Console.WriteLine("Deleted Successfully!");
+                    return;
                 }
             }
-        }
-        public void ViewContacts()
-        {
-            Person person = new Person();
-            foreach (Person v in ContactList)
-            {
-                Console.WriteLine($"First Name:{v.FirstName}");
-
-            }
+            Console.WriteLine("Person Not Found!");
         }
     }
 }
