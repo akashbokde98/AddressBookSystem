@@ -128,5 +128,14 @@ namespace AddressBookSystem2
             }
             Console.WriteLine("Person Not Found!");
         }
+        public void ViewPerson()
+        {
+            Person person = new Person();
+            foreach (Person v in ContactList)
+            {
+                Console.WriteLine($"First Name:{v.FirstName}");
+
+            }
+        }
     }
 }

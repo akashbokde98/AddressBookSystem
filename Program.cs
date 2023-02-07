@@ -14,7 +14,7 @@ namespace AddressBookSystem2
             string input = "";
             while (input != "EXIT")
             {
-                Console.WriteLine("Enter 'ADD' To Add New Contact-\nEnter 'EDIT' To Edit Contact-\nEnter 'DELETE' To Delete Contact-\nEnter 'EXIT' To Exit Address Book-");
+                Console.WriteLine("Enter 'ADD' To Add New Contact-\nEnter 'EDIT' To Edit Contact-\nEnter 'DELETE' To Delete Contact-\nEnter 'VIEW' To View Contact-\nEnter 'EXIT' To Exit Address Book-");
                 input = Console.ReadLine().ToUpper();
                 switch (input)
                 {
@@ -28,6 +28,10 @@ namespace AddressBookSystem2
 
                     case "DELETE":
                         contact.DeletePerson();
+                        break;
+
+                    case "VIEW":
+                        contact.ViewPerson();
                         break;
 
                     case "EXIT":
